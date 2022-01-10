@@ -1,10 +1,10 @@
 function addRow(){ 
     const newRow = document.getElementsByClassName('column')
-    for(let item of newRow){//for each of the new row that you already have from left to right,
+    for(let item of newRow){
         const newDiv = document.createElement('div')//its a 
         newDiv.setAttribute('class', "box")
         newDiv.addEventListener('click', setCellColor)
-        item.append(newDiv) //what it does is that it creates another box below from the left to
+        item.append(newDiv)
     }
 }
 function addColumn(){ 
@@ -40,10 +40,10 @@ function removeColumn(){
 
 function fillUncoloredCells() {
     const boxEls = document.getElementsByClassName('box')
-    for (box of boxEls) {//for every box that was given to us currently
+    for (box of boxEls) {
         const currentColor = getComputedStyle(box).backgroundColor 
-        if (currentColor === "rgba(0, 0, 0, 0)"){//if the boxes are currently have no color whatsoever, 
-            box.style.backgroundColor = selectedColor//this would activate and give the remaining color with that color
+        if (currentColor === "rgba(0, 0, 0, 0)"){
+            box.style.backgroundColor = selectedColor
         }
     }
 }
@@ -59,13 +59,13 @@ function clearColors() {
         box.style.backgroundColor = "transparent"
     }
 }
-const colorSelectorEl = document.getElementById("color-selector")
+const focus = document.getElementById("color-selector")
 let selectedColor = "transparent"
 const setColor = (event) => {
-    selectedColor = colorSelectorEl.value
+    selectedColor = focus.value
 }
 
-colorSelectorEl.addEventListener("change", setColor)
+focus.addEventListener("change", setColor)
 function setCellColor(event) {
     event.target.style.backgroundColor = selectedColor;
 }
