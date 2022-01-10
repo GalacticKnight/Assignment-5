@@ -1,7 +1,7 @@
 function addRow(){ 
     const newRow = document.getElementsByClassName('column')
     for(let item of newRow){
-        const newDiv = document.createElement('div')//its a 
+        const newDiv = document.createElement('div')
         newDiv.setAttribute('class', "box")
         newDiv.addEventListener('click', setCellColor)
         item.append(newDiv)
